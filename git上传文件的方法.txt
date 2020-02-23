@@ -1,0 +1,9 @@
+上传到github的命令
+在github上新建一个仓库（也可以用原来的）
+打开git
+使用命令 git clone 仓库地址
+把文件放到本地仓库所在的文件夹
+选择要上传的文件
+git add 文件名
+git commit -m 文件名
+git push origin master
