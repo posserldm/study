@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .row {
+            width: 100%;
+            border: 1px solid orange;
+            margin-top: 10px;
+        }
+
+        [class^='col'] {
+            float: right;
+            height: 40px;
+            background-color: #d6d6d6;
+        }
+
+        .clearfix::after {
+            /* 伪类元素是行内元素 */
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        /* 百分比布局 */
+        .col1 {
+            width: 25%;
+        }
+
+        .col2 {
+            width: 50%;
+        }
+
+        /* 媒体查询 */
+        @media(max-width: 768px) {
+            .row {
+                width: 100%;
+            }
+
+            [class ^='col'] {
+                float: none;
+                height: 40px;
+                width: 100%;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="row">
+        <div class="header">页头</div>
+    </div>
+    <div class="row">
+        <div class="col1">导航</div>
+        <div class="col2">主要内容</div>
+        <div class="col1">侧边栏</div>
+    </div>
+    <div class="row">
+        <div class="footer">页尾</div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,470 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+/* 向右浮动 */
+.fr {
+    float: right;
+}
+/* 向左浮动 */
+.fl {
+    float: left;
+}
+/* 清除浮动 */
+.clean {
+    overflow: hidden;
+}
+
+/* 图片默认是占据父元素的100% */
+img {
+    display: block;
+    width: 100%;
+}
+
+.box {
+    width: 100%;
+    /* css3:直接填潢页面的高度 */
+    height: 100vh;
+}
+
+/* 左边大模块 */
+.leftContent {
+    padding: 24px;
+    width: calc(30% - 48px);
+    height: calc(100% - 48px);
+    position: relative;
+    /* border: 1px solid red; */
+}
+
+
+.banner {
+    position: relative;
+}
+
+.banner>img {
+    transition: width 0.5s;
+    display: none;
+}
+.banner>img:first-child {
+    display: block;
+}
+/* 轮播图默认样式  */
+.left, .right {
+    position: absolute;
+    height: 60px;
+    width: 60px;
+    top: 50%;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+    opacity: 0.5;
+    display: none;
+    transition: 0.4s;
+}
+
+.left {
+    left: 20px;
+    transform: rotate(135deg);
+}
+
+.right {
+    right: 20px;
+    transform: rotate(-45deg);
+}
+.banner:hover .left {
+    display: block;
+}
+.banner:hover .right {
+    display: block;
+}
+
+.logo {
+    width: 36px;
+}
+.navList>div {
+    float: left;
+    /* line */
+    line-height: 36px;
+    font-weight: 700px;
+    margin-right: 20px;
+}
+
+.menuIcon {
+    font-size: 24px;
+    position: absolute;
+    top: 6px;
+    right: 0;
+}
+
+/* 登陆注册模块 */
+.loginBox {
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    left: 20%;
+    bottom: 0;
+    top: 0;
+    margin: 0 auto;
+}
+
+.moblie-title {
+    font-size: 24px;
+    font-weight: 700;
+    padding: 16px;
+    display: none;
+}
+
+.title {
+    width: 75%;
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 100px;
+    margin-bottom: 20px;
+}
+.loginIcon {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    /* 图片居中 */
+    vertical-align: middle;
+}
+
+.login {
+    margin-right: 24px;
+    line-height: 28px;
+    color: #1ab177;
+}
+
+.tip {
+    font-size: 16px;
+    color: #1ab177;
+}
+/* 注册 */
+.register {
+    height: 28px;
+    line-height: 28px;
+    border: 1px solid #1ab177;
+    border-radius: 48px;
+    padding: 2px 12px;
+    color: #1ab177;
+}
+
+/* 右边大模块 */
+.rightContent {
+    width: calc(70% - 3px);
+    height: 100vh;
+    border-left: 3px solid rgba(7, 17, 27, 0.1);
+    /* 原来的高度是100%, 但是超出会影响显示 */
+    overflow: auto;
+}
+/* 右边模块ipad端 */
+ .rightContent-menu {
+    /* position: relative; */
+    padding: 30px;
+    margin-bottom: 20px;
+    display: none;
+}
+
+
+.tabBar {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 1000;
+    display: flex;
+    background-color: white;
+    width: 100%;
+    display: none;
+}
+
+.tabBar>li {
+    text-align: center;
+    flex: 1;
+}
+/* 交集选择器 */
+.tabBar>li.aaa {
+    color: #00a862;
+}
+
+.suggestBox {
+    background-color: rgba(247, 247, 247, 1);
+    padding: 24px;
+}
+
+.suggestBox>div {
+    /* 因为没有默认的宽度(图片没有明显的浮动效果) */
+    float: left;
+    width: calc((100% - 48px) / 3);
+    margin-right: 15px;
+}
+.suggestBox:last-child {
+    margin-right: 0;
+    /* border: 5px solid red; */
+}
+
+.suggestBox>div:hover {
+    transform: translateY(-10px);
+    box-shadow: 3px 3px 3px rgba(7, 17, 27, 0.5);
+    /* 加上过度的效果 */
+    transition: all 0.2s ease;
+}
+
+/* 星享俱乐部 */
+.club {
+    /* 清除浮动 */
+    clear: both;
+}
+.club>div {
+    width: 50%;
+    /* margin: 0 auto; */
+    padding: 30px 0;
+}
+.detailBox {
+    width: 60%;
+    margin: 0 auto;
+}
+.barShare {
+    font-size: 24px;
+    font-weight: 500;
+    /* background-color: blueviolet; */
+}
+.detail {
+    color: rgba(0, 0, 0, 0.56);
+    line-height: 30px;
+    margin: 0 0 24px 24px;
+}
+.knowMore {
+    display: block;
+    color: #c2a661;
+}
+
+.club-rightContent {
+    margin-top: 50px;
+}
+.detail-imgBox {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.detail-btn {
+    background: none;
+    border: 1px solid #00A862;
+    border-radius: 48px;
+    box-sizing: border-box;
+    color: #00A862;
+    margin: 0 auto;
+    /* margin-right: 5px; */
+    display: inline-block;
+}
+
+.spacial-ticket {
+    text-align: center;
+    padding: 36px 0;
+    background-color: rgba(247,247, 247, 1);
+}
+.spacial-content {
+    max-width: 768px;
+    /* margin: 0 auto; */
+}
+.ticket {
+    margin-top: 80px;
+    padding: 5px;
+}
+.spacial-ticket::after {
+    content: '';
+    /* 占位置 */
+    display: block;
+    /* 清除浮动 */
+    clear: both;
+}
+/* 清除浮动 */
+.clean {
+    overflow: hidden;
+}
+.ticket>li {
+    float: left;
+    padding: 50px 18px 30px;
+    margin-right: 30px;
+    width: calc((100% - 90px) / 4 - 36px);
+}
+.ticket>li:last-child {
+    margin: 0;
+}
+.ticket>li:hover {
+    transform: translateY(-10px);
+    box-shadow: 1px 1px 1px rgba(7, 17, 27, 0.1);
+    /* 加上过度的效果 */
+    transition: all 0.2s ease;
+}
+
+.ticketTitle {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+.ticket-detail {
+    color: rgb(0, 0, 0, 0.56);
+    margin-bottom: 5px;
+}
+.ticket-knowMore {
+    font-size: 17px;
+    color: #c2a661;
+    margin-top: 18px;
+}
+/* 对图片进行处理 */
+.ticketBox {
+    /* position: absolute; */
+    height: 72px;
+    /* left: 0; */
+    /* right: 0; */
+}
+.ticketBox>li {
+    float: left;
+    width: calc(100% / 4);
+}
+.ticketBox>img {
+    margin: 0 auto;
+    width: auto;
+    height: 100%;
+}
+.star {
+    background-color: #fdfdfd;
+    padding: 36px 0;
+    text-align: center;
+    overflow: hidden;
+    margin: 0 auto;
+    position: relative;
+    
+}
+.star-content {
+    margin: 0 auto;
+    width: 768px;
+}
+.star-ul {
+    width: 1120px;
+    overflow: hidden;
+}
+
+.star-ul>li {
+    float: left;
+    margin-right: 20px;
+    width: calc((100% - 60px) / 4 - 2px);
+    border: 1px solid rgba(218, 105, 105, 0.12);
+}
+.star-ul>li:last-child {
+    margin: 0;
+}
+/* 背景图片 */
+.star-img {
+    height: 168px;
+    background-size: 100% 100%;
+    list-style: none;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.star-img1 {
+    background-image: url(https://www.starbucks.com.cn/assets/images/homepage/coffeehouse-coffee-cultivation-kv.jpg) ;
+}
+.star-img2 {
+    background-image: url(https://www.starbucks.com.cn/assets/images/homepage/coffeehouse-4-fundamentals-kv.jpg);
+}
+.star-img3 {
+    background-image: url(https://www.starbucks.com.cn/assets/images/homepage/coffeehouse-roast-story-kv.jpg);
+}
+.star-img4 {
+    background-image: url(https://www.starbucks.com.cn/assets/images/homepage/coffeehouse-pour-over-kv.jpg);
+}
+.star-img>span {
+    position: absolute;
+    left: 0;
+    top: 6px;
+    background-color: #c2a661;
+    color: white;
+    padding: 4px 12px;
+    font-size: 14px;
+}
+.icon-right {
+    position: absolute;
+    left: 90%;
+    top: 60%;
+    padding: 7px;
+    background: white;
+    font-weight: bold;
+    /* 给个层积 */
+    z-index: 999;
+}
+
+
+/* ipad端的响应式处理 */
+@media screen and (min-width: 678px) and (max-width: 1140px) {
+    .leftContent {
+        display: none;
+    }
+    .rightContent {
+        width: 100%;
+        border: 0;
+    }
+    .rightContent-menu {
+        display: block;
+    }
+} 
+/* 移动端响应布局 */
+@media screen and (max-width: 678px) {
+    .leftContent {
+        display: none;
+    }
+    .rightContent {
+        width: 100%;
+        border: 0;
+    }
+    .rightContent-menu {
+        display: none;
+    }
+    .moblie-title {
+        display: block;
+    }
+    .tabBar {
+        display: flex;
+    }
+    /* 商品推荐盒子 */
+    .suggestBox>div {
+        width: 100%;
+        /* padding: 10px; */
+        margin-top: 20px;
+    }
+    /* 星享俱乐部 */
+    .club {
+        width: 100%;
+        text-align: center;
+    }
+    .meoblie-btn {
+        display: inline-block;
+    }
+    .club-rightContent {
+        margin: 0;
+        /* padding: 0; */
+    }
+    /* 星巴克精选 */
+    .ticket>li {
+        width: calc((100% - 30px) / 2 - 36px);
+        margin-right: 30px;
+        margin-bottom: 80px;
+    }
+    /* .ticket>li */
+    .ticket>li:nth-child(2n) {
+        margin: 0;
+    }
+    .ticket>li:nth-child(3) {
+        margin-bottom: 0;
+    }
+    .star-content {
+        text-align: center;
+        width: 100%;
+    }
+    .space {
+        width: 100%;
+        height: 80px;
+        background: rgb(247, 247, 247);
+    }
+} 

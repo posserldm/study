@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>动态表格</title>
+    <style>
+        .all {
+            width: 100%;
+            height: auto;
+        }
+        table {
+            margin: 0 auto;
+            
+        }
+        table tr {
+            text-align: center;
+        }
+        button {
+            display: block;
+            margin: 0 auto;
+        }
+        table tr td:nth-child(5) {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="all">
+        <table border="1" cellspacing="0">
+            <tr>
+                <th>序号</th>
+                <th>姓名</th>
+                <th>科目</th>
+                <th>成绩</td>
+                <th>是否删除</th>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>小斌斌</td>
+                <td>小斌斌</td>
+                <td>98</td>
+                <td>删除</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>小斌斌</td>
+                <td>小斌斌</td>
+                <td>94</td>
+                <td>删除</td>
+            </tr>
+        </table>
+        <button>添加数据</button>
+    </div>
+</body>
+</html>
+<script>
+    var index = 5;
+    var data = ['3', '小斌斌', '小斌斌','98', '删除'];
+    var tab = document.getElementsByTagName('table')[0];
+    var addBtn = document.getElementsByTagName('button')[0];
+    var rows = document.getElementsByTagName('tr');
+    for (var i = 1; i < rows.length; i++) {
+        rows[i].cells[4].onclick = function() {
+            console.log(this.parentNode);
+            this.parentNode.parentNode.removeChild(this.parentNode);
+        }
+    }
+    addBtn.onclick = function() {
+        index++;
+        var tr = document.createElement('tr');
+        console.log(tr);
+        for (var i = 0; i < data.length; i++) {
+            var td = document.createElement('td');
+            td.innerHTML = data[i];
+            tr.appendChild(td);
+        }
+        tab.appendChild(tr);
+        tr.lastChild.onclick = function() {
+            // console.log(this)
+            var table = document.getElementsByTagName('table')[0];
+            table.removeChild(this.parentNode);
+
+        }
+        tr.firstChild.innerHTML = index +"";
+        
+    }
+</script>

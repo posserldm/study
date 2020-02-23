@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+<body>
+    <table border="1" cellspacing="0">
+        <!-- 头部 -->
+        <thead>
+            <tr>
+                <th>序号</th>
+                <th>姓名</th>
+                <th>科目</th>
+                <th>成绩</th>
+                <th>是否删除</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- 把内容放到这里面来 -->
+        </tbody>
+    </table>
+    <button>添加数据</button>
+</body>
+</html>
+<script>
+    // 1.0获得事件
+    var button = document.getElementsByTagName('button')[0];
+    var tbody = document.getElementsByTagName("tbody")[0];
+    console.log(button, tbody);
+
+    var index = 0;
+    button.onclick = function() {
+        index++;
+        var tr = document.createElement('tr');
+        // 创建td标签
+        createDom("td", tr, index);
+        createDom("td", tr, 'ikun');
+        createDom("td", tr, 'WEB');
+        createDom("td", tr, '99');
+        createDom("td", tr, '删除');
+        // 创建td标签后，重新获得元素的操作权
+        var td = document.getElementsByClassName('p');
+        // 把创建的tr标签加入到tbody当中
+        tbody.appendChild(tr);
+        // 给td标签绑定点击事件
+        for (let i = 0; i < td.length; i++) {
+            td[i].onclick = function() {
+                console.log(i);
+                this.parentNode.remove();
+            }
+        }
+        
+        
+    }
+
+    // 创建标签函数
+    function createDom(son, parent, content) {
+        // 在这个案例中, 创建td标签
+        var td = document.createElement(son);
+        
+        if (content == '删除') {
+            td.setAttribute("class", 'p');
+            td.style.background = "red";
+        }
+        // 往td标签中加入内容
+        td.innerHTML = content;
+        parent.appendChild(td);
+    }
+
+</script>

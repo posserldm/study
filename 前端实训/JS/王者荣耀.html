@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0 auto;
+        }
+        img {
+            width: 50px;
+            height: 60px;
+        }
+
+        .one {
+            width: 400px;
+            /* background-color: red; */
+        }
+
+        .da {
+            float: left;
+            text-align: center;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="body">
+        <div class="one">
+            <!-- {{ it.img }} -->
+            <div class="da"  v-for="it in getData('坦克')">
+                <p><img :src="it.img" alt=""></p>
+                <!-- <p>{{ it.name }}</p> -->
+                <!-- <p>{{ it.position }}</p> -->
+            </div>
+            <div style="clear: both;"></div>
+            <p>--------------------------------------------------------------------------------</p>
+            <br><br>
+            <div class="da"  v-for="it in getData('战士')">
+                <p><img :src="it.img" alt=""></p>
+                <!-- <p>{{ it.name }}</p> -->
+                <!-- <p>{{ it.position }}</p> -->
+            </div>
+            <br><br>
+            <div style="clear: both;"></div>
+            <p>--------------------------------------------------------------------------------</p>
+            <div class="da"  v-for="it in getData('法师')">
+                <p><img :src="it.img" alt=""></p>
+                <!-- <p>{{ it.name }}</p> -->
+                <!-- <p>{{ it.position }}</p> -->
+            </div>
+            <br><br>
+            <div style="clear: both;"></div>
+            <p>--------------------------------------------------------------------------------</p>
+            <div class="da"  v-for="it in getData('刺客')">
+                <p><img :src="it.img" alt=""></p>
+                <!-- <p>{{ it.name }}</p> -->
+                <!-- <p>{{ it.position }}</p> -->
+            </div>
+            <br><br>
+            <div style="clear: both;"></div>
+            <p>--------------------------------------------------------------------------------</p>
+            <div class="da"  v-for="it in getData('射手')">
+                <p><img :src="it.img" alt=""></p>
+                <!-- <p>{{ it.name }}</p> -->
+                <!-- <p>{{ it.position }}</p> -->
+            </div>
+            <br><br>
+            <div style="clear: both;"></div>
+            <p>--------------------------------------------------------------------------------</p>
+            <div class="da"  v-for="it in getData('辅助')">
+                <p><img :src="it.img" alt=""></p>
+                <!-- <p>{{ it.name }}</p> -->
+                <!-- <p>{{ it.position }}</p> -->
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src="./jquery.js"></script>
+<script src="./data.js"></script>
+<script src="./vue.js"></script>
+<script>
+    var vm = new Vue({
+        el: '#body',
+        data: {
+            list: data,
+            tlist: []
+        },
+        methods: {
+            getImgSrc(image) {
+                return image.img;
+            },
+
+            getData(limit) {
+                var tlist = [];
+                for (var i = 0; i < this.list.length; i++) {
+
+                    if (this.list[i].position.indexOf(limit) != -1) {
+                        console.log(this.list[i]);
+                        tlist.push(this.list[i]);
+                    }
+                }
+                return tlist;
+            }
+        }
+    })
+</script>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        .left {
+            margin-left: 10%;
+            width: 10%;
+            height: 571px;
+            float: left;
+            background-color: rgb(21, 54, 89);
+            color: rgb(96, 132, 70);
+            text-align: center;
+            margin-top: 10px;
+            position: fixed;
+        }
+        .right {
+            width: 70%;
+            /* height: 700px; */
+            float: right;
+            margin-right: 10%;
+            background-color: rgb(20, 45, 74);
+            margin-top: 10px;
+            padding-top: 20px;
+            overflow: auto;
+        }
+        .left>ul>li>div {
+            width: 100%;
+            height: 80px;
+            line-height: 70px;
+            border: 1px solid rgb(34, 64, 99);
+        }
+        .aaa {
+            background-color: #fffD8D;
+        }
+        .images {
+            float: left;
+            width: 150px;
+            height: 150px;
+            text-align: center;
+            /* background-color: red; */
+            color: rgb(96, 132, 70);
+            
+        }
+        .images>img {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="body">
+        <div class="one">
+            <div class="left">
+                <ul>
+                    <li v-for="(it, ind) in title">
+                        <div @click="select(it, ind)" :class="index == ind? 'aaa' :''">{{ it==''?'全部':it }}</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="right">
+                <div class="images" v-for="it in tlist">
+                    <img :src="it.img" alt="">
+                    <p>{{ it.name }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src="./data.js"></script>
+<script src="./vue.js"></script>
+<script>
+    var vm = new Vue({
+        el: '#body',
+        data: {
+            title:['', '坦克', '战士', '刺客', '法师', '射手', '辅助'],
+            list: data,
+            tlist: data, 
+            index: 0
+        },
+        methods: {
+            select(limit, index) {
+                this.index = index;
+                var tlist = [];
+                for (var i = 0; i < this.list.length; i++) {
+                    if (this.list[i].position.indexOf(limit) != -1) {
+                        console.log(this.list[i]);
+                        tlist.push(this.list[i]);
+                    }
+                }
+                this.tlist = tlist;
+            }
+        }
+    })
+</script>

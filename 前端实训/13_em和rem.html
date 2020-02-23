@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            font-size: 2rem;
+        }
+        .granfather {
+            width: 400px;
+            height: 400px;
+            background-color: red;
+            color: white;
+            font-size: 20px;
+        }
+
+        .father {
+            width: 200px;
+            height: 200px;
+            background-color: green;
+            color: white;
+            font-size: 1em;
+        }
+
+        .son {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            color: white;
+            font-size: 1em;
+        }
+        .small>* {
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        布局：
+        自适应布局
+        响应式布局
+        弹性布局
+        rem布局
+     -->
+    <!-- 在小各种充中rpx是随着你的屏幕变化而变化的,而px是写死的 -->
+    <h3>em是替代px来设置字体大小的.好处是绽放字体(实际是相对于父元素而言的)</h3>
+    <h3>正常来说,默认字体大小16px,那么1em=16px</h3>
+    <h3>rem是基于整个body标签的</h3>
+
+    <div class="granfather">
+        <div class="father">
+            <div class="son">
+                字体大小
+            </div>
+        </div>
+    </div>
+
+    <div class="big">
+        <div class="small">
+            <P>字体大小1</P>
+            <p><span>字体大小2</span></p>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>动态表格3</title>
+</head>
+<style>
+    .all {
+        width: 100%;
+        height: auto;
+    }
+
+    table {
+        margin: 0 auto;
+
+    }
+
+    table tr {
+        text-align: center;
+    }
+
+    button {
+        display: block;
+        margin: 0 auto;
+    }
+
+    table tr td:nth-child(5) {
+        background-color: red;
+    }
+</style>
+</head>
+
+<body>
+    <div class="all" id="app">
+        <table border="1" cellspacing="0">
+            <tr>
+                <th>序号</th>
+                <th>姓名</th>
+                <th>科目</th>
+                <th>成绩</td>
+                <th>是否删除</th>
+            </tr>
+            <tr v-for= "(it, i) in list">
+                <td>{{ it.id }}</td>
+                <td>{{ it.name }}</td>
+                <td>{{ it.sub }}</td>
+                <td>{{ it.score }}</td>
+                <td @click="del(i)">{{ it.del}}</td>
+            </tr>
+        </table>
+        <button @click="add()">添加数据</button>
+    </div>
+</body>
+</html>
+<script src="./vue.js"></script>
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data:{
+            list:[
+                {'id':'4', 'name':'小斌斌','sub':'beasedata', 'score':'98', 'del':'删除'},
+                {'id':'5', 'name':'小斌斌','sub':'beasedata', 'score':'98', 'del':'删除'},
+            ],
+            ind: 5
+        },
+        methods:{
+            del(index) {
+                console.log(index);
+                this.list.splice(index, 1);
+            },
+            add() {
+                this.ind++;
+                console.log(this.ind);
+                this.list.push({'id':''+this.ind, 'name':'小斌斌','sub':'beasedata', 'score':'98', 'del':'删除'});
+            }
+        }
+    })
+</script>

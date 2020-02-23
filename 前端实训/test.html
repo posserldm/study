@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1" cellspacing="0">
+        <thead>
+            <tr>
+                <th>序号</th>
+                <th>姓名</th>
+                <th>性别</th>
+                <th>电话号码</th>
+                <th>工作地址</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        </tbody>
+    </table>
+</body>
+</html>
+<script>
+    var data = [
+        {name:'ikun', sex:'man', tel: '8888888', addr:'中国篮球'},
+        {name:'凡凡', sex:'man', tel: '8888888', addr:'加拿大电音'},
+        {name:'张天爱', sex:'girl', tel: '8888888', addr:'中国上海'},
+        {name:'张天爱2', sex:'girl', tel: '8888888', addr:'中国上海2'},
+        {name:'张天爱3', sex:'girl', tel: '8888888', addr:'中国上海3'}
+    ];
+    var str = ''
+    for (var i = 0; i < data.length; i++) {
+        str += `<tr>`;
+        str += `<td>${i}</td>`;
+        str += `<td>${data[i].name}</td>`;
+        str += `<td>${data[i].sex}</td>`;
+        str += `<td>${data[i].tel}</td>`;
+        str += `<td>${data[i].addr}</td></tr>`;
+    }
+    console.log(str);
+    var tbody = document.getElementsByTagName('tbody')[0];
+    console.log(tbody);
+    tbody.innerHTML = str;
+</script>

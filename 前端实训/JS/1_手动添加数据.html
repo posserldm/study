@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+<body>
+    <table border="1" cellspacing="0">
+        <!-- 头部 -->
+        <thead>
+            <tr>
+                <th>序号</th>
+                <th>姓名</th>
+                <th>科目</th>
+                <th>成绩</th>
+                <th>是否删除</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- 把内容放到这里面来 -->
+        </tbody>
+    </table>
+    <button>添加数据</button>
+</body>
+</html>
+<script>
+    // 1.0获得事件
+    var button = document.getElementsByTagName('button')[0];
+    var tbody = document.getElementsByTagName("tbody")[0];
+    console.log(button, tbody);
+
+    var index = 0;
+    button.onclick = function() {
+        index++;
+        // 定义要拼接存放的变量
+        var str = '';
+        str += '<tr>';
+        str += '<td>' + index + '</td>';
+        str += '<td>小彬彬</td>';
+        str += '<td>WEB前端</td>';
+        str += '<td>97</td>';
+        str += '<td style = "background: red; class = "p"; onclick = "cancel(this)">删除</td>';
+        str += '</tr>';
+        console.log(str);
+        tbody.insertAdjacentHTML('beforeBegin', str)
+    }
+
+    // 删除函数 
+    function cancel(_this) {
+        // 找到_this的父元素节点(全部移除)
+        _this.parentNode.remove();
+    }
+</script>
