@@ -6,4 +6,4 @@
 选择要上传的文件
 git add 文件名
 git commit -m 文件名
-git push origin master
+git -u push origin master
